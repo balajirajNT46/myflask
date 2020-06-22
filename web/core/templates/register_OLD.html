@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0235)https://golive.urbanedge.co.in/profile/1/1d3fs/eyJpdiI6IjZvRFBZd29DYjdoY21CdFpuSDU1bGc9PSIsInZhbHVlIjoiZTliazNhRG84bjNlblp6djRlVE9jdz09IiwibWFjIjoiN2FkZjg0ZDYxN2VhYmRjMDUxOGNiZDhlN2JjN2QzNjAzNzU2ZjY1ZTdkMDYyNzRkMDRhYzExZmY2MDg2NzBkZSJ9 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="css/style.css" > -->
+
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+<title>Register</title>
+</head>
+
+<body class="home"> 
+
+<div class="container h-100">
+  <div class="row h-100">
+    <div class="col-lg-8 col-sm-9 bg-white register offset-lg-2">
+      <div class="row">
+        <div class="col-lg-6 col1 branding"> 
+      <!-- <img src="{{ url_for('static', filename='images/main.png') }}" alt=""> -->
+      
+      </div>
+        <div class="col-lg-6 col2">
+
+                        <form id="reg" name="register" action="https://golive.urbanedge.co.in/profile/1/1d3fs/eyJpdiI6ImEwS3ZNVWNkSk84VVdVbU5VSWtvUkE9PSIsInZhbHVlIjoiSXJJSjlNV0RSUkh0bGhJS3dWcEEydz09IiwibWFjIjoiY2Q1YTVkMDg3NzJmMzFhNzlkN2ZhNTdkNGRiYmY4MTQ5ZDM5MmIwZDU4NWEwODNmZDM1YjdjNzgxODI1YmUyYyJ9" method="post" novalidate="novalidate">
+              <input type="hidden" name="is_next" id="is_next" value="1">
+            <div class="col">
+              <h1>Please enter your details</h1>
+              <div class="form-group">
+                <label for="name">Full Name<span>*</span></label>
+                <input id="name" name="name" placeholder="Please enter your Full Name" type="text" class="form-control" required="required" value="" aria-required="true">
+                <label class="error"> </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="email">Email<span>*</span></label>
+                <input id="email" name="email" placeholder="Please enter your Email" type="text" class="form-control" required="required" value="" aria-required="true">
+                <label class="error"> </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="mobile">Mobile<span>*</span></label>
+                <input id="mobile" name="mobile" placeholder="Please enter your Mobile Number" type="text" class="form-control" required="required" value="9876543210" aria-required="true">
+                <label class="error"> </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input id="city" name="city" placeholder="Please enter your City" type="text" class="form-control" value="">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="state">State</label>
+                <input id="state" name="state" placeholder="Please enter your State" type="text" class="form-control" value="">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="text">Affiliation</label>
+                <input id="affiliation" name="affiliation" placeholder="Please enter your Affiliation" type="text" class="form-control" value="">
+              </div>
+            </div>
+            
+            <div class="col text-center">
+              <div class="form-group">
+                <button type="submit" id="btnPrevious" class="btn btn-primary float-left" formnovalidate="formnovalidate">PREVIOUS</button>
+                <button type="submit" id="btnNext" class="btn btn-primary float-right">NEXT</button>
+             </div>
+              </div>
+            </form></div>
+          
+        </div>
+      </div>
+    
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-12 text-center footer">
+      Powered by <a href="http://numerotec.com/" target="_blank">NumeroTec</a> </div>
+    </div>
+
+
+<script src="{{ url_for('static', filename='js/jquery-3.4.1.slim.min.js.download') }}." integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> 
+<script src="{{ url_for('static', filename='js/popper.min.js.download') }}." integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
+<script src="{{ url_for('static', filename='js/bootstrap.min.js.download') }}" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="{{ url_for('static', filename='js/jquery.validate.js.download') }}"></script>
+
+
+
+<script type="text/javascript">
+
+  $( document ).ready(function() {
+
+   validation();
+
+    $("#btnPrevious").click(function(e)
+    {
+       $("#is_next").val(0)
+    //   $("form[name='register']").attr('action',$(this).attr('data-url'))
+    //   $("form[name='register']").submit();
+
+    })
+     $("#btnNext").click(function(e)
+    {
+       $("#is_next").val(1)
+    //   $("form[name='register']").attr('action',$(this).attr('data-url'))
+    //   $("form[name='register']").submit();
+    })
+  });
+
+
+    function validation()
+    {
+        $("#reg").validate({
+                    //ignore: "",
+                    rules: {    
+                      name: {                      
+                        required: true
+                      },      
+                      mobile: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 15,
+                        number: true,    
+
+                      },
+                      email: {
+                        required: true,
+                        email :true
+                      },
+                      // city: {
+                      //   required: true                      
+                      // },
+                      // state: {
+                      //   required: true                      
+                      // },
+                      // dob: {
+                      //   required: true                      
+                      // },
+                      // is_pg_student: {
+                      //   required: true
+                      // },
+                      // hdnPAId: {
+                      //   required: true,
+                      //   number:true,
+                      //   min:1              
+                      // }
+                    },
+                    messages: {
+                              // mobile :
+                              // {
+                              //   required:  "The mobile may only contain letters and numbers.",
+                              // },
+                              // mobile :
+                              // {
+                              //   required:  "The mobile may only contain letters and numbers.",
+                              // }
+                    },
+              });
+          
+    }
+
+</script>
+
+
+
+</body></html>

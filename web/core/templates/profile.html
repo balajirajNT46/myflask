@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">		
+		
+		<style type="text/css">
+			
+			.mulberry{
+
+				background-color: #4a100c;
+
+			}
+			.btn{
+				color: white !important;
+			}
+			.error{
+				color: red;
+				font-weight: bold;
+			}
+
+			body {
+				background-color: #f2f2f2;
+			}				
+		</style>
+
+	</head>
+	
+	<body>
+		{% for r in data %}
+    	{% endfor %}
+		<div class="container">		
+			<form action="" method="get" enctype="multipart/form-data" onsubmit="return validate();">
+			  <div class="row">
+				  <div class="col-md-6 offset-md-3 offset-md-3">			  
+					  <div class="form-group">						
+						<h1 class="col-md-8 offset-md-4">User Profile</h1>								
+					  </div>
+				  </div>
+			  </div>
+
+			  <div class="row">
+			  	<div class="col-md-6 offset-md-3 img-responsive">
+				  	<div class="form-group">
+				  		<img src="" class="img-thumbnail  img-responsive" width="150px">	
+					</div>
+					<div class="form-group">
+						<input type='file' id='profile_pic' name='profile_pic'>  
+					</div>
+			  	</div>
+			  	
+			  </div>
+
+			  <div class="row">
+				  <div class="col-md-6 offset-md-3">
+					  <div class="form-group">
+						<label for="username">Name</label> {{ user_id }} 
+					    <span class="error" name="nameerror" id="nameerror"></span>
+					  </div>
+				  </div>
+			  </div>
+			  
+
+			  <div class="row">
+			  	<div class="col-sm-6 col-md-6 col-lg-6 offset-md-6">
+				  	<div>
+					 	<input type="submit" id="next" name="next" value="Submit" class="btn mulberry"></input> 
+					</div>			  
+				</div>
+			  </div>
+			  
+			</form>
+		</div> <!-- container end -->	
+
+	</body>
+	
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript">
+		
+		function validate(){
+
+			var val1 = document.getElementById("username").value;				
+				if (val1 == ''){
+					document.getElementById('nameerror').innerHTML = "Please enter your user name!";					
+					valid = false;
+				}
+				else {
+					if (val1.length < 10){
+						document.getElementById('nameerror').innerHTML = "Please enter a valid username with minimum 10 characters!";
+						valid = false;
+					}										
+				}
+
+			// var val1 = document.getElementById("username").value;				
+			// 	if (val1 == ''  || val1.length < 10){
+			// 		document.getElementById('nameerror').innerHTML = "Please enter a valid username with minimum 10 characters!";
+			// 		valid = false;
+			// 	}
+
+
+			var val2 = document.getElementById("pwd").value;					
+				if (val2 == ''){
+					document.getElementById('pwderror').innerHTML = "Please enter password!";					
+					valid = false;
+				}
+				else {
+					if (val2.length < 10){
+						document.getElementById('pwderror').innerHTML = "Please enter a valid password with minimum 10 characters!";
+						valid = false;
+					}										
+				}
+
+			var val3 = document.getElementById("inputGroupSelect01").value;
+				if (val3 == 'Date' || val3.length < 1){
+					document.getElementById('dateerror').innerHTML = "Please select a valid date!";					
+					valid = false;
+				}				
+							
+			var val4 = document.getElementById("inputGroupSelect02").value;								
+				if (val4 == 'Month' || val4.length < 1){
+					document.getElementById('montherror').innerHTML = "Please select a valid month!";					
+					valid = false;
+				}				
+
+			var val5 = document.getElementById("inputGroupSelect03").value;
+				if (val5 == 'Year' || val5.length < 1){
+					document.getElementById('yearerror').innerHTML = "Please select a valid year!";					
+					valid = false;
+				}
+
+			var val6 = document.getElementById("address").value;
+				if (val6 == ''){
+					document.getElementById('addresserror').innerHTML = "Please enter a valid address!";					
+					valid = false;
+				}			
+			var val8 = document.getElementById("email").value;
+				if (val8 == ''){
+					document.getElementById('emailerror').innerHTML = "Please enter a valid email id!";					
+					valid = false;
+				}
+			var val9 = document.getElementById("mobile").value;
+				if (val9 == '' || val9.length < 10){
+					document.getElementById('mobileerror').innerHTML = "Please enter a valid mobile number!";					
+					valid = false;
+				}
+				return valid;
+			
+		}
+
+		//to hide error msg upon clicking a field
+		$(".form-group input").focusout(function() {
+		  $(this).siblings(".error").hide()
+		});
+		$(".form-group textarea").focusout(function() {
+		  $(this).siblings(".error").hide()
+		});
+		$(".form-group select").focusout(function() {
+		  $(this).siblings(".error").hide()
+		});
+	</script>
+
+</html>
